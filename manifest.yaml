@@ -1,0 +1,6 @@
+---
+  applications:
+   - name: SnapShareapi
+     random-route: true
+     memory: 256M
+  
