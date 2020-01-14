@@ -17,7 +17,7 @@ import verify from './src/middleware/verfyToken.middleware';
 config();
 
 //conect mongoDb
-connect("mongodb://mongoDB:27017/chats_api", { useNewUrlParser: true, useUnifiedTopology: true  });
+connect(process.env.CONNECTION_STRING, { useNewUrlParser: true, useUnifiedTopology: true  });
 
 connection.once('open', function () {
     console.log(' Database connection made sucessfull');

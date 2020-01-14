@@ -43,7 +43,7 @@ router.get('/',getChats);
  * calls the makeNewChat route handler
  */
 router.post('/', upload.single('imageUrl'),makeNewChat);
-router.get('/conv/:id',deleteSingleConversation);
+// router.get('/conv/:id',deleteSingleConversation);
 router.get('/:id', getSingleChat);
 router.delete('/:id',deleteSingleChat)
 //todo:add the isLiked and isRead route
