@@ -9,6 +9,10 @@
   },
   "author": "brian omondi",
   "license": "ISC",
+  "engines": {
+    "node": "13.6.0",
+    "npm":"6.13.4"
+  },
   "dependencies": {
     "@hapi/joi": "^16.1.8",
     "bcryptjs": "^2.4.3",
