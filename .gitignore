@@ -8,6 +8,6 @@
 !.vscode/extensions.json
 .history/*
 
-.env
-/uploads
-/config
+**.env
+/dist
+# /config

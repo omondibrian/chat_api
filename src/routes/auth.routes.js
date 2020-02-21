@@ -11,19 +11,15 @@ import {
   getUsers,
   changeUserProfile,
   forgotPass,
-  getUser
+  getUser,
+  searchFriends,
+  addContact
 } from "../controller/auth.controller";
 import verified from "../middleware/verfyToken.middleware";
 import multer, { diskStorage } from "multer";
+import { addObjectToStore } from "../middleware/addObjectToStore";
 
-const storage = diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, 'uploads/');
-  },
-  filename: (req, file, cb) => {
-    cb(null, Date.now() + "_" + file.originalname);
-  }
-});
+const storage = multer.memoryStorage()
 const filefilter = (req, file, cb) => {
   if (file.mimetype === "image/jpeg" || file.mimetype === "image/png") {
     cb(null, true);
@@ -45,7 +41,7 @@ const upload = multer({
  * this is accessed via this end point
  * https:localhost/api/user/register
  */
-router.post("/register", upload.single("profileImage"), register_user);
+router.post("/register", upload.single("profileImage"), addObjectToStore,  register_user);
 
 /**login route
  * @param req
@@ -57,8 +53,10 @@ router.post("/register", upload.single("profileImage"), register_user);
  */
 router.post("/login", log_in_user);
 // router.post("/verify", activateAccount);
-router.get("/", getUsers);
-router.get('/:id',getUser)
-router.put("/", upload.single("profileImage"), verified, changeUserProfile);
+router.post("/users", verified, getUsers);
+router.get("/:id", verified, getUser);
+router.put("/", upload.single("profileImage"),addObjectToStore, verified, changeUserProfile);
 router.post("/forgotpass", forgotPass);
+router.post("/", verified, searchFriends);
+router.put("/addContact", verified, addContact);
 export default router;

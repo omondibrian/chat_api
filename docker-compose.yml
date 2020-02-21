@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 
 services:
   app:
@@ -6,12 +6,12 @@ services:
     build: .
     restart: always
     ports:
-      - '4000:4000'
-    links: 
+      - "4000:4000"
+    links:
       - mongoDB
 
   mongoDB:
     container_name: mongo
     image: mongo
     ports:
-      - '27017:27017'
+      - "27017:27017"
