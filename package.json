@@ -46,7 +46,7 @@
     "expect": "^24.9.0",
     "mocha": "^8.0.1",
     "mockgoose": "^8.0.4",
-    "nodemon": "^2.0.2",
+    "nodemon": "^2.0.7",
     "supertest": "^4.0.2"
   }
 }
