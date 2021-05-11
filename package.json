@@ -32,7 +32,7 @@
     "multer": "^1.4.2",
     "nodemailer": "^6.6.0",
     "nodemailer-mailgun-transport": "^2.0.3",
-    "randomstring": "^1.1.5",
+    "randomstring": "^1.2.1",
     "redis": "^3.1.2",
     "socket.io": "^4.0.2"
   },
