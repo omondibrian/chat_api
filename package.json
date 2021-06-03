@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@hapi/joi": "^17.1.1",
-    "aws-sdk": "^2.919.0",
+    "aws-sdk": "^2.920.0",
     "bcryptjs": "^2.4.3",
     "core-js": "^3.13.1",
     "cors": "^2.8.5",
